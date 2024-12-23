@@ -7,6 +7,38 @@ body {
     color: #333;
 }
 
+/* Estilo de la flecha */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem; /* Flecha más gruesa */
+    color: rgb(139, 137, 137); /* Color blanco */
+    cursor: pointer;
+    animation: bounce 2s infinite; /* Movimiento constante */
+    transition: transform 0.3s ease;
+}
+
+/* Animación de rebote suave */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* Responsivo: ajusta el tamaño de la flecha en pantallas pequeñas */
+@media (max-width: 768px) {
+    .scroll-down {
+        font-size: 2rem; /* Tamaño reducido en móviles */
+    }
+}
+
+
+
 /* Hero Section */
 .hero {
     display: flex;

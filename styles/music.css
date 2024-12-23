@@ -1,16 +1,107 @@
 /* New Music Player Section */
+/* Fondo general con flores animadas */
 .music-player {
+    position: relative;
     padding: 50px 20px;
-    background-color: #fff;
+    background-color: #fff; /* Fondo blanco */
     color: #555;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita que las flores se desborden */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
 }
 
+
+@keyframes bloom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+/* Flores como círculos blancos con sombras más intensas */
+/* Flores con sombras */
+.flw {
+    z-index: 5;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Inicialmente invisible */
+    transform: scale(0);
+    animation: bloom 3s ease-in-out infinite; /* Duración más corta para que fluya mejor */
+    animation-timing-function: ease-in-out;
+}
+
+/* Animación de las flores */
+@keyframes bloom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+/* Posicionando las flores en lugares aleatorios */
+.flw:nth-child(1) {
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s; /* Retraso para que cada flor comience en diferente momento */
+}
+
+.flw:nth-child(2) {
+    top: 20%;
+    left: 60%;
+    animation-delay: 0.3s;
+}
+
+.flw:nth-child(3) {
+    top: 35%;
+    left: 25%;
+    animation-delay: 0.6s;
+}
+
+.flw:nth-child(4) {
+    top: 45%;
+    left: 80%;
+    animation-delay: 0.9s;
+}
+
+.flw:nth-child(5) {
+    top: 55%;
+    left: 40%;
+    animation-delay: 1.2s;
+}
+
+/* Añadiendo una clase para la animación solo cuando se ponga en play */
+input[type="checkbox"]:checked ~ .flw {
+    animation-play-state: running; /* Activando la animación cuando se marca play */
+}
+
+
 .player-container {
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,10 +110,9 @@
     background-color: #f9f9f9;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Vinyl Disk */
 /* Vinyl Disk */
 .vinyl {
     position: relative;
@@ -36,13 +126,11 @@
     margin-bottom: 20px;
     overflow: hidden; /* Esconde cualquier parte fuera del vinilo */
     transition: transform 0.5s ease;
-    animation: spin 10s infinite linear;
-    animation-play-state: paused; /* Al principio la animación está en pausa */
 }
 
-/* Cuando el audio está en reproducción, la animación se reproduce */
+/* Animación de giro del vinilo */
 .vinyl.playing {
-    animation-play-state: running; /* Activamos la animación cuando se hace play */
+    animation: spin 10s infinite linear;
 }
 
 .needle {

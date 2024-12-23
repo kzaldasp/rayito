@@ -1,0 +1,129 @@
+/* Fondo de la sección */
+.letter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fdfdfd; /* Fondo blanco puro */
+    font-family: 'Cursive', 'Georgia', serif;
+    padding: 20px;
+}
+
+/* Contenedor de la carta */
+.letter-container {
+    background: linear-gradient(to bottom, #ffffff, #f8f8f8); /* Fondo blanco sutil */
+    width: 80%;
+    max-width: 500px;
+    height: 80%;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-3deg); /* Inclinación ligera */
+    border: 2px solid black; /* Bordes negros suaves */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra exterior */
+    clip-path: polygon(5% 0%, 95% 0%, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0% 90%, 0% 10%); /* Bordes irregulares */
+    border-radius: 10px;
+    overflow: hidden; /* Ocultar contenido si se desborda */
+}
+
+/* Sombra para los bordes */
+.letter-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid black;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    clip-path: inherit;
+    z-index: -1;
+}
+
+/* Instrucción (minimalista, no un botón tradicional) */
+.start-writing {
+    background: none;
+    color: #555;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.start-writing:hover {
+    color: #000; /* Oscurecer al pasar el cursor */
+}
+
+.start-writing:focus {
+    outline: none; /* Sin borde de foco */
+}
+
+/* Contenido de la carta */
+.letter-content {
+    display: none; /* Ocultar inicialmente */
+    color: #333;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic; /* Texto cursivo */
+    padding: 10px;
+    text-align: center;
+    overflow-y: auto;
+    width: 100%;
+}
+
+/* Mostrar contenido al activarlo */
+.letter-content.visible {
+    display: block;
+    animation: typing 3s steps(50, end); /* Animación de escritura */
+    white-space: pre-wrap; /* Mantener saltos de línea */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .letter-container {
+        width: 90%;
+        height: 70%;
+        transform: rotate(-2deg);
+    }
+
+    .start-writing {
+        font-size: 1rem;
+    }
+}
+
+/* Keyframe para animar la escritura */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Estilo del botón de navegación */
+.navigate-btn {
+    display: none;
+    position: relative;
+    background: none;
+    border: none;
+    color: rgb(78, 67, 67);
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 0;
+    font-family: 'Times New Roman', serif; /* Estilo similar al de la carta */
+    transition: color 0.3s ease;
+}
+
+/* Efecto sutil cuando el botón está en hover */
+.navigate-btn:hover {
+    color: #ff7eb3; /* Color sutil al pasar el ratón */
+}
