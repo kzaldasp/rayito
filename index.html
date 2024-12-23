@@ -5,20 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz Cumpleaños</title>
     <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/buttonplay.css">
 </head>
 <body>
     <section class="hero">
-        <h1>Feliz Cumpleaños, Rayito de Sol</h1>
         <div class="gif-container">
-            <img src="https://i.redd.it/1hhw50vkge9a1.gif" alt="GIF Decorativo" class="floating-gif">
+            <img src="/source/pochita1.webp" alt="GIF animado con transparencia">
         </div>
+        <h1>Feliz Cumpleaños, Rayito de Sol</h1>
+
         <p class="scroll-hint">Desliza hacia abajo para más sorpresas</p>
     </section>
-    <section class="content">
-        <p>¡Aquí puedes agregar más contenido especial!</p>
-    </section>
 
-    <script src="/script/index.js"></script>
+
+    <section class="music-player">
+        <div class="player-container">
+            <div class="vinyl">
+                <div class="needle"></div>
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c5/34/a5/c534a514-f1ce-dfca-5c3a-32032e1b5b77/198588303931.jpg/1200x1200bb.jpg" alt="Imagen del disco" class="vinyl-image">
+            </div>
+            <div class="info">
+                <h2 class="title">Flores</h2>
+                <p class="artist">LATIN MAFIA</p>
+            </div>
+
+            <div class="divbu">
+                <input type="checkbox" id="play">
+                <label for="play">
+                    <div class="letter-p"></div>
+                    <div class="letter-l"></div>
+                    <div class="letter-a"><span></span></div>
+                    <div class="letter-y"></div>
+                </label>
+            </div>
+
+            <!-- Reproductor de audio -->
+            <audio id="audio-player" src="source/flores.mp3"></audio>
+        </div>
+    </section>
+    
+    
+    
+      <script src="/script/index.js"></script>
 
 </body>
 </html>

@@ -1,12 +1,15 @@
-const gif = document.querySelector('.floating-gif'); // Selecciona el GIF
-const hero = document.querySelector('.hero'); // Selecciona la sección .hero
+// Obtener los elementos necesarios
+const playCheckbox = document.getElementById('play');
+const audioPlayer = document.getElementById('audio-player');
+const vinyl = document.querySelector('.vinyl');  // El vinilo
 
-// Detectar cuando el GIF está cruzando
-gif.addEventListener('animationiteration', () => {
-    hero.classList.add('white-background'); // Cambiar fondo a blanco
-
-    // Volver al fondo original después de 2 segundos
-    setTimeout(() => {
-        hero.classList.remove('white-background');
-    }, 2000);
+// Función para manejar el cambio en el checkbox (play/pause)
+playCheckbox.addEventListener('change', function() {
+    if (playCheckbox.checked) {
+        audioPlayer.play(); // Reproducir el audio
+        vinyl.classList.add('playing'); // Iniciar la animación de giro
+    } else {
+        audioPlayer.pause(); // Pausar el audio
+        vinyl.classList.remove('playing'); // Detener la animación de giro (se queda en la posición actual)
+    }
 });

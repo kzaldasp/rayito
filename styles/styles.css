@@ -1,0 +1,146 @@
+/* New Music Player Section */
+.music-player {
+    padding: 50px 20px;
+    background-color: #fff;
+    color: #555;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Vinyl Disk */
+/* Vinyl Disk */
+.vinyl {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Esconde cualquier parte fuera del vinilo */
+    transition: transform 0.5s ease;
+    animation: spin 10s infinite linear;
+    animation-play-state: paused; /* Al principio la animación está en pausa */
+}
+
+/* Cuando el audio está en reproducción, la animación se reproduce */
+.vinyl.playing {
+    animation-play-state: running; /* Activamos la animación cuando se hace play */
+}
+
+.needle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.vinyl-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el vinilo sin deformarse */
+}
+
+/* Title and Artist Info */
+.info {
+    margin-top: 15px; /* Menos espacio entre el vinilo y el título */
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.artist {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.play-pause-btn {
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+    border-color: transparent transparent transparent #202020;
+    cursor: pointer;
+    will-change: border-width;
+    transition: all .2s ease;
+    
+    &.paused {
+      border-style: double;
+      border-width: 0px 0 0px 60px;
+    }
+    
+    &:hover {
+      border-color: transparent transparent transparent #404040;
+    }
+}
+
+/* Animación de giro del vinilo */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vinyl {
+        width: 150px;
+        height: 150px;
+    }
+
+    .vinyl-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .artist {
+        font-size: 0.9rem;
+    }
+}

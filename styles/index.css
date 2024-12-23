@@ -38,7 +38,7 @@ body {
     position: absolute;
     top: 40%; /* Ajusta la altura según la posición deseada */
     z-index: 2;
-    animation: floatAcross 10s linear infinite;
+    animation: floatAcross 5s linear infinite;
 }
 
 .floating-gif {
@@ -68,15 +68,12 @@ body {
 @keyframes floatAcross {
     0% {
         transform: translateX(100vw); /* Comienza desde fuera de la pantalla */
-        background-color: #ff758c; /* Color inicial */
     }
     50% {
         transform: translateX(50vw); /* En el centro */
-        background-color: #000; /* Fondo negro */
     }
     100% {
         transform: translateX(-100vw); /* Sale por la izquierda */
-        background-color: #ff758c; /* Volver al color inicial */
     }
 }
 
