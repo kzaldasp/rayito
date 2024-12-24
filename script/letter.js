@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.display = 'none';
 
         // Mostrar la carta y empezar a escribir
-        const loremText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula turpis id volutpat ultricies. Morbi eget urna aliquam, tincidunt augue non, eleifend turpis. Nullam a dapibus diam. Maecenas sit amet efficitur neque. Donec pretium suscipit lectus, vel suscipit neque. Morbi consequat scelerisque lorem et placerat. Mauris rhoncus, tellus vulputate commodo ornare, libero nulla blandit leo, sed vestibulum est arcu a velit. Vestibulum sed blandit neque. Integer et mauris quis libe`;
+        const loremText = `Lorem ipsum dolor sit amet, consectetur. Vestibulum sed blandit neque. Integer et mauris quis libe`;
 
         let index = 0;
         letterContent.classList.add('visible'); // Mostrar la carta
