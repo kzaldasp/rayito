@@ -26,19 +26,19 @@ function startTyping(captionElement, textToWrite, typingSpeed) {
       let textToWrite = "";
       switch (index) {
         case 0:
-          textToWrite = "Eres arte";
+          textToWrite = "Lorem inpus salutem";
           break;
         case 1:
-          textToWrite = "La belleza está en los ojos de quien mira";
+          textToWrite = "Lorem inpus salutem";
           break;
         case 2:
-          textToWrite = "El arte transforma el alma";
+          textToWrite = "Lorem inpus salutem";
           break;
         case 3:
-          textToWrite = "Inspiras creatividad";
+          textToWrite = "Lorem inpus salutem";
           break;
         case 4:
-          textToWrite = "Vivir es crear";
+          textToWrite = "Lorem inpus salutem";
           break;
         default:
           textToWrite = "";
