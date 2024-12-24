@@ -2,6 +2,7 @@
 const musicPlayer = document.querySelector('.music-player');
 const playButton = document.getElementById('play');
 const audioPlayer = document.getElementById('audio-player');
+const vinyl = document.querySelector(".vinyl");
 
 // Control de rondas
 let isPlaying = false; // Verifica si el audio está en reproducción
@@ -53,13 +54,16 @@ function generateFlowers() {
 playButton.addEventListener('change', function () {
     if (playButton.checked) { // Si el botón está en play
         isPlaying = true;
+        vinyl.classList.remove("paused");
+        vinyl.classList.add("playing");
         rounds = 0; // Reinicia las rondas
         audioPlayer.play(); // Reproducir música
         generateFlowers(); // Inicia la generación de flores
     } else { // Si el botón está en pause
         isPlaying = false;
         audioPlayer.pause(); // Pausar música
-
+        vinyl.classList.remove("playing");
+        vinyl.classList.add("paused");
         // Detener las animaciones y limpiar las flores
         const flowers = document.querySelectorAll('.flw');
         flowers.forEach(function (flower) {
@@ -72,3 +76,4 @@ playButton.addEventListener('change', function () {
         }, 5000); // Esperar un poco antes de limpiar para que las flores desaparezcan suavemente
     }
 });
+

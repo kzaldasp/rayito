@@ -5,6 +5,14 @@
     box-sizing: border-box;
   }
   
+  .polaroid .caption {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 2em;
+    color: #3b3a3a; /* Color de texto oscuro para contraste */
+  }
+
   .polaroid {
     background: #fff;
     padding: 1rem;
@@ -126,3 +134,38 @@
     }
   }
   
+  /* Estilo general del texto */
+.responsive-text {
+  font-family: 'Dancing Script', cursive; /* Tipografía bonita, puedes cambiarla por la que prefieras */
+  font-size: 2rem; /* Ajustable para pantallas grandes */
+  color: #777; /* Gris suave */
+  text-align: center;
+  margin: 15px 0;
+  animation: moveText 3s ease-in-out infinite; /* Animación de movimiento */
+}
+
+/* Animación suave de arriba a abajo */
+@keyframes moveText {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Eleva el texto */
+  }
+  100% {
+    transform: translateY(0); /* Vuelve a la posición original */
+  }
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 1.5rem; /* Reduce el tamaño del texto en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-text {
+    font-size: 1.2rem; /* Aún más pequeño en pantallas extra pequeñas */
+  }
+}

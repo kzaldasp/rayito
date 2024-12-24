@@ -2,6 +2,8 @@
 .letter-section {
     display: flex;
     justify-content: center;
+    flex-direction: column; /* Alinear elementos en columna */
+
     align-items: center;
     height: 100vh;
     background: #fdfdfd; /* Fondo blanco puro */
@@ -108,22 +110,37 @@
     }
 }
 
-/* Estilo del botón de navegación */
 .navigate-btn {
-    display: none;
-    position: relative;
-    background: none;
-    border: none;
-    color: rgb(78, 67, 67);
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-top: 20px;
-    padding: 0;
-    font-family: 'Times New Roman', serif; /* Estilo similar al de la carta */
-    transition: color 0.3s ease;
+    display: none; /* Asegurar que es visible */
+    background-color: #f4f4f4; /* Fondo claro minimalista */
+    color: #333; /* Color de texto oscuro */
+    border: 2px solid #333; /* Borde definido */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1.5rem; /* Tamaño de fuente llamativo */
+    font-weight: bold; /* Fuente destacada */
+    cursor: pointer; /* Mostrar puntero al pasar sobre el botón */
+    transition: all 0.3s ease; /* Suavizar transiciones */
+    outline: none; /* Eliminar el contorno predeterminado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 10px; /* Espacio entre la carta y el botón */
 }
 
-/* Efecto sutil cuando el botón está en hover */
 .navigate-btn:hover {
-    color: #ff7eb3; /* Color sutil al pasar el ratón */
+    background-color: #333; /* Fondo oscuro al pasar el ratón */
+    color: #f4f4f4; /* Texto claro para contraste */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+.navigate-btn:active {
+    transform: translateY(0); /* Volver a la posición original al presionar */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Sombra más reducida */
+}
+
+/* Ajustar el tamaño del GIF */
+.small-gif {
+    width: 120px; /* Tamaño pequeño ajustable */
+    height: auto; /* Mantener la proporción del GIF */
+    margin-top: 20px; /* Separación del GIF con el botón */
 }

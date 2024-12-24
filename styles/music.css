@@ -126,12 +126,31 @@ input[type="checkbox"]:checked ~ .flw {
     margin-bottom: 20px;
     overflow: hidden; /* Esconde cualquier parte fuera del vinilo */
     transition: transform 0.5s ease;
+    animation: spin 10s infinite linear;
+    animation-play-state: paused; /* Pausa la animación por defecto */
 }
 
-/* Animación de giro del vinilo */
-.vinyl.playing {
-    animation: spin 10s infinite linear;
+/* Animación de giro */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+/* Estado de reproducción activa */
+.vinyl.playing {
+    animation-play-state: running; /* Activa la animación cuando se reproduce */
+}
+
+.vinyl.paused {
+    animation-play-state: paused; /* Pausa la animación sin reiniciar */
+}
+
+
+
 
 .needle {
     position: absolute;
