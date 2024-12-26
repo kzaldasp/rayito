@@ -26,19 +26,19 @@ function startTyping(captionElement, textToWrite, typingSpeed) {
       let textToWrite = "";
       switch (index) {
         case 0:
-          textToWrite = "¡Feliz";
+          textToWrite = "Perfección en una foto";
           break;
         case 1:
-          textToWrite = "Cumpleaños";
+          textToWrite = "Construyendo recuerdos";
           break;
         case 2:
-          textToWrite = "Rayito";
+          textToWrite = "Brillo único ";
           break;
         case 3:
-          textToWrite = "De";
+          textToWrite = "Momentos que brillan";
           break;
         case 4:
-          textToWrite = "Sol!";
+          textToWrite = "Mi persona favorita";
           break;
         default:
           textToWrite = "";
