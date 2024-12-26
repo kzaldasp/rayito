@@ -26,19 +26,19 @@ function startTyping(captionElement, textToWrite, typingSpeed) {
       let textToWrite = "";
       switch (index) {
         case 0:
-          textToWrite = "Lorem inpus salutem";
+          textToWrite = "¡Feliz";
           break;
         case 1:
-          textToWrite = "Lorem inpus salutem";
+          textToWrite = "Cumpleaños";
           break;
         case 2:
-          textToWrite = "Lorem inpus salutem";
+          textToWrite = "Rayito";
           break;
         case 3:
-          textToWrite = "Lorem inpus salutem";
+          textToWrite = "De";
           break;
         case 4:
-          textToWrite = "Lorem inpus salutem";
+          textToWrite = "Sol!";
           break;
         default:
           textToWrite = "";
