@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* Estilo de la flecha */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem; /* Flecha más gruesa */
+    color: rgb(139, 137, 137); /* Color blanco */
+    cursor: pointer;
+    animation: bounce 2s infinite; /* Movimiento constante */
+    transition: transform 0.3s ease;
+}
+
+/* Animación de rebote suave */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* Responsivo: ajusta el tamaño de la flecha en pantallas pequeñas */
+@media (max-width: 768px) {
+    .scroll-down {
+        font-size: 2rem; /* Tamaño reducido en móviles */
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+/* Clase para cambiar el fondo a blanco */
+.hero.white-background {
+    background: #fff; /* Fondo blanco */
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: textPulse 3s infinite;
+    z-index: 1;
+}
+
+/* Floating GIF */
+.gif-container {
+    position: absolute;
+    top: 40%; /* Ajusta la altura según la posición deseada */
+    z-index: 2;
+    animation: floatAcross 5s linear infinite;
+}
+
+.floating-gif {
+    height: 100px; /* Ajusta el tamaño del GIF */
+    opacity: 0.9; /* Ligero efecto translúcido */
+}
+
+/* Scroll Hint */
+.scroll-hint {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-style: italic;
+    animation: bounce 2s infinite;
+    z-index: 1;
+}
+
+/* Content Section */
+.content {
+    padding: 50px 20px;
+    background: #fff;
+    color: #555;
+    text-align: center;
+}
+
+/* Animations */
+/* Cambiar el fondo cuando pase el GIF */
+@keyframes floatAcross {
+    0% {
+        transform: translateX(100vw); /* Comienza desde fuera de la pantalla */
+    }
+    50% {
+        transform: translateX(50vw); /* En el centro */
+    }
+    100% {
+        transform: translateX(-100vw); /* Sale por la izquierda */
+    }
+}
+
+
+
+@keyframes textPulse {
+    0%, 100% {
+        transform: scale(1);
+        color: #fff;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #ffebcc;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .floating-gif {
+        height: 80px; /* Reduce el tamaño del GIF en pantallas más pequeñas */
+    }
+
+    .scroll-hint {
+        font-size: 0.9rem;
+    }
+}

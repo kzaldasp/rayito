@@ -1,114 +1,21 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños</title>
-    <link rel="shortcut icon" href="/rayito/source/ico.ico" />
-
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/music.css">
-    <link rel="stylesheet" href="styles/buttonplay.css">
-    <link rel="stylesheet" href="styles/letter.css">
-    <link rel="stylesheet" href="styles/fotos.css">
+    <title>Document</title>
 </head>
 <body>
-    <section class="hero">
-        <div class="gif-container">
-            <img src="source/pochita1.webp" alt="GIF animado con transparencia">
-        </div>
+<div id="container"></div>
+<div id="text-container">
+    <p>Solo quería recordarte en estos momentos de mucho trabajo lo inteligente y capaz que eres. Admiro muchísimo cómo te entregas a todo lo que haces, y estoy muy orgulloso de ti, rayito de sol. Te mando muchos piquitos de fuerza para seguir adelante.</p>    
+</div>
+<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/planet2.png">
 
-        <h1>Feliz Cumpleaños, Rayito de Sol</h1>
-
-        <p class="scroll-hint">Desliza hacia abajo para más sorpresas</p>
-        <div class="scroll-down">&#8595;</div> <!-- Flecha hacia abajo -->
-    </section>
-
-
-    <section class="music-player">
-
-        <div class="player-container">
-            <div class="vinyl">
-                <div class="needle"></div>
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c5/34/a5/c534a514-f1ce-dfca-5c3a-32032e1b5b77/198588303931.jpg/1200x1200bb.jpg" alt="Imagen del disco" class="vinyl-image">
-            </div>
-            <div class="info">
-                <h2 class="title">Flores</h2>
-                <p class="artist">LATIN MAFIA</p>
-            </div>
-
-            <div class="divbu">
-                <input type="checkbox" id="play">
-                <label for="play">
-                    <div class="letter-p"></div>
-                    <div class="letter-l"></div>
-                    <div class="letter-a"><span></span></div>
-                    <div class="letter-y"></div>
-                </label>
-            </div>
-
-            <!-- Reproductor de audio -->
-            <audio id="audio-player" src="source/flores.mp3"></audio>
-        </div>
-        <div class="scroll-down">&#8595;</div> <!-- Flecha hacia abajo -->
-    </section>
-    <div class="responsive-text">
-      Presiona las imágenes
-    </div>
-    
-
-    <div class="wrapper">
-
-        <div class="item">
-          <div class="polaroid"><img src="source/5.jpeg">
-            <div class="caption">.</div>
-          </div>
-        </div>
-      
-        <div class="item">
-          <div class="polaroid"><img src="source/4.jpeg">
-            <div class="caption">.</div>
-          </div>
-        </div>
-      
-        <div class="item">
-          <div class="polaroid"><img src="source/3.jpeg">
-            <div class="caption">. </div>
-          </div>
-        </div>
-      
-        <div class="item">
-          <div class="polaroid"><img src="source/2.jpeg">
-            <div class="caption">.</div>
-          </div>
-        </div>
-        
-        <div class="item">
-          <div class="polaroid"><img src="source/1.jpeg">
-            <div class="caption">.</div>
-          </div>
-        </div>
-      
-      </div>
-
-          
-    <div class="letter-section">
-        <div class="letter-container">
-            <div class="letter-content"></div>
-            <button class="start-writing">Presióname</button>
-        </div>
-        <img class="small-gif" src="https://media3.giphy.com/media/5zjm7cZbpBaRunuVQ1/giphy.gif?cid=6c09b952lyv5tscmrwg5dyfofdh5w836odv56c5vu6d6hsn6&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s" alt="GIF animado con transparencia">
-
-        <button class="navigate-btn" onclick="window.location.href='flower.html'">➜</button>
-        <audio id="song" src="source/compartir.mp3"></audio>
-
-    </div>
-      <script src="script/music.js"></script>
-      <script src="script/letter.js"></script>
-      <script src="script/index.js"></script>
-      <script src="script/fotos.js"></script>
-
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/three.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/CanvasRenderer.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1037366/Projector.js"></script>
+<script src="script/index.js"></script>
 </body>
 </html>
