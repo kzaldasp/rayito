@@ -48,3 +48,29 @@ img {
     bottom: 0;
     margin: auto;
 }
+
+/* Estilo para el botón */
+#button-container {
+    margin-top: 20px;
+}
+
+#button-container button {
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo gris translúcido */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#button-container button:hover {
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo más oscuro al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de "levantamiento" del botón */
+}
+
+#button-container button:active {
+    transform: translateY(1px); /* Efecto al hacer clic */
+}

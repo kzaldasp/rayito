@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Iniciar el carrusel dinámico
-    setInterval(goToNextPanel, 3000); // Cambia cada 3 segundos
+    setInterval(goToNextPanel, 3500); // Cambia cada 3 segundos
 
     // Detectar el scroll y cambiar el fondo
     carousel.addEventListener("scroll", () => {
@@ -63,4 +63,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Llamar a la función para crear los puntos al cargar
     createDots();
+
+    class Countdown {
+        constructor(el){
+          this.el = el;
+          this.targetDate = new Date(el.getAttribute("date-time"));
+          this.createCountDownParts()
+          this.countdownFunction();
+          this.countdownLoopId = setInterval(this.countdownFunction.bind(this), 1000)
+        }
+        createCountDownParts(){
+          ["days", "hours", "minutes", "seconds"].forEach(part => {
+            const partEl = document.createElement("div");
+            partEl.classList.add("part", part);
+            const textEl = document.createElement("div");
+            textEl.classList.add("text");
+            textEl.innerText = part;
+            const numberEl = document.createElement("div");
+            numberEl.classList.add("number");
+            numberEl.innerText = 0;
+            partEl.append(numberEl, textEl);
+            this.el.append(partEl);
+            this[part] = numberEl;
+          })
+        }
+      
+        countdownFunction(){
+          const currentDate = new Date();    
+          if(currentDate > this.targetDate) return clearInterval(this.countdownLoopId);
+          const remaining = this.getRemaining(this.targetDate, currentDate);
+          Object.entries(remaining).forEach(([part,value]) => {
+            this[part].style.setProperty("--value", value)
+            this[part].innerText = value
+          })  
+        }
+        
+        getRemaining(target, now){
+          let seconds = Math.floor((target - (now))/1000);
+          let minutes = Math.floor(seconds/60);
+          let hours = Math.floor(minutes/60);
+          let days = Math.floor(hours/24);
+          hours = hours-(days*24);
+          minutes = minutes-(days*24*60)-(hours*60);
+          seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+          return { days, hours, minutes, seconds }      
+        }
+      
+      }
+      
+      const countdownEls= document.querySelectorAll(".countdown") || [];
+      countdownEls.forEach(countdownEl => new Countdown(countdownEl))
+      
+
+// Obtén el botón
+const btn = document.getElementById("countdown-btn");
+
+// Establece la fecha actual y la fecha objetivo
+const currentDate = new Date();
+const targetDate = new Date("2025-01-01T00:00:00");
+
+// Verifica si la fecha actual es igual o posterior a la fecha objetivo
+if (currentDate >= targetDate) {
+    // Remueve la clase 'disabled' para habilitar el botón
+    btn.classList.remove("disabled");
+} else {
+    // Calcula cuánto tiempo falta para la fecha objetivo
+    const timeUntilTarget = targetDate - currentDate;
+
+    // Programa la habilitación del botón cuando llegue la fecha objetivo
+    setTimeout(() => {
+        btn.classList.remove("disabled");
+    }, timeUntilTarget);
+}
+
+
 });
