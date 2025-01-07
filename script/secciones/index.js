@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const backgrounds = [
         "url('https://64.media.tumblr.com/aaa66a89ba7874f532f4f772fcee5fd8/cdf196d4b86e7dd6-16/s540x810/29eab0fbe8d19c47109f9b141bc6e6297453ef14.gif')",
         "url('https://i.pinimg.com/originals/57/c5/69/57c5697206091bd39bd90731bbc60a36.gif')",
+        "url('https://media0.giphy.com/media/iggT536JzcWrfoAfxi/200.gif?cid=6c09b952wbnsw85ei0wi9e31xmz5lb7issriw9r048kr0epw&ep=v1_internal_gif_by_id&rid=200.gif&ct=g')",
     ];
 
     let currentIndex = 0;
